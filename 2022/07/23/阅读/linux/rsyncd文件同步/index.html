@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ky/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ky/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ky/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/ky/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/ky/css/main.css">
+
+
+<link rel="stylesheet" href="/ky/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oliver6653.github.io","root":"/ky/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Linux 配置# 安装 rsync# 123456789# 检查是否安装了 rsyncrpm -qa|grep rsync# 如果没有安装的话，进行安装yum install rsync# 将 rsync 设置成开启自启，并启动systemctl enable rsyncdsystemctl start rsyncd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux#rsyncd文件同步">
+<meta property="og:url" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/linux/rsyncd%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Linux 配置# 安装 rsync# 123456789# 检查是否安装了 rsyncrpm -qa|grep rsync# 如果没有安装的话，进行安装yum install rsync# 将 rsync 设置成开启自启，并启动systemctl enable rsyncdsystemctl start rsyncd">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-23T02:21:18.763Z">
+<meta property="article:modified_time" content="2022-07-23T02:21:18.763Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="rsync">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/linux/rsyncd%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>linux#rsyncd文件同步 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/ky/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/ky/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/ky/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/linux/rsyncd%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ky/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux#rsyncd文件同步
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-23 10:21:18" itemprop="dateCreated datePublished" datetime="2022-07-23T10:21:18+08:00">2022-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ky/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Linux-配置">Linux 配置#</h2>
+<p>安装 rsync#</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查是否安装了 rsync</span></span><br><span class="line">rpm -qa|grep rsync</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果没有安装的话，进行安装</span></span><br><span class="line">yum install rsync</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 rsync 设置成开启自启，并启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> rsyncd</span><br><span class="line">systemctl start rsyncd</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="编写配置文件">编写配置文件#</h2>
+<p>rsync 涉及到的配置主要有三个：</p>
+<ul>
+<li>/etc/rsyncd.conf -&gt; 对 rsync 服务进行配置</li>
+<li>/tmp/rsync -&gt; 待同步的目标目录，路径可以自定义</li>
+<li>/etc/rsyncd.passwd -&gt;里面包含用于进行密码验证的账号信息</li>
+</ul>
+<p>/etc/rsyncd.conf 的配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/rsyncd: configuration file for rsync daemon mode</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># See rsyncd.conf man page for more options.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行通信的端口，如果 firewall 打开的话，需要将对应的端口添加进去</span></span><br><span class="line">port=8730</span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志文件</span></span><br><span class="line"><span class="built_in">log</span> file=/var/log/rsync.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># rsync 的进程 id</span></span><br><span class="line">pid file=/var/run/rsync.pid</span><br><span class="line"></span><br><span class="line"><span class="comment"># 要同步的模块，这里一般以项目名命名</span></span><br><span class="line">[cmi]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同步的目标文件夹</span></span><br><span class="line">path=/tmp/rsync</span><br><span class="line"></span><br><span class="line"><span class="comment"># rsync daemon 在传输前是否切换到指定的 path 目录下，并将其监禁在内，用于增加传输的安全性</span></span><br><span class="line">use <span class="built_in">chroot</span>=no</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定最大的连接数</span></span><br><span class="line">max connections=4</span><br><span class="line"></span><br><span class="line"><span class="comment"># yes 表示只读本地文件无法同步到服务器</span></span><br><span class="line"><span class="built_in">read</span> only=no</span><br><span class="line"></span><br><span class="line"><span class="comment"># 客户端请求显示模块列表时，该模块是否显示出来</span></span><br><span class="line">list=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务运行时的用户</span></span><br><span class="line">uid=root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务运行时的用户组</span></span><br><span class="line">gid=root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行验证时的用户名，必须是系统存在的用户</span></span><br><span class="line">auth <span class="built_in">users</span> = root </span><br><span class="line"></span><br><span class="line"><span class="comment"># 连接用户时的密码</span></span><br><span class="line">secrets file=/etc/rsyncd.passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许的 ip</span></span><br><span class="line">hosts allow=*</span><br></pre></td></tr></table></figure>
+<p>创建目标的文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /tmp/rsync</span><br></pre></td></tr></table></figure>
+<p>创建密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">vim /etc/rsyncd.passwd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入密码</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;root:123456&quot;</span> &gt; /etc/rsyncd.passwd</span><br><span class="line"></span><br><span class="line"><span class="comment">#更改文件权限</span></span><br><span class="line"><span class="built_in">chmod</span> 600 /etc/rsyncd.passwd</span><br></pre></td></tr></table></figure>
+<p>打开rsync</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start rsyncd</span><br></pre></td></tr></table></figure>
+<h2 id="windows-配置">windows 配置#</h2>
+<p><a target="_blank" rel="noopener" href="https://www.itefix.net/cwrsync-free-edition">下载 cwrsync</a><br>
+将下载的文件存放到固定位置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载的文件名类似于这样</span></span><br><span class="line">cwrsync_5.7.2_x86_free.zip</span><br><span class="line"><span class="comment"># 解压并放入目录，并添加到环境变量中，方便日后的使用</span></span><br><span class="line">我这里配置的目录是“C:\app\rsync\cwrsync_5.7.2_x86_free\bin”</span><br></pre></td></tr></table></figure>
+<p>执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果配置环境变量，随意打开一个 cmd 就可以了，否则的话进入安装的目录中（bin 下面）</span></span><br><span class="line"></span><br><span class="line">rsync.exe -avPz --port 8730 --password-file=/cygdrive/C/app/rsync/cwrsync_5.7.2_x86_free/bin/cmi_password.txt --exclude-from=/cygdrive/C/app/rsync/cwrsync_5.7.2_x86_free/bin/exclude.txt /cygdrive/C/test  root@your_ip::cmi/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 常见的的参数</span></span><br><span class="line"></span><br><span class="line">-a: 归档模式，使用递归传输并保持文件的属性</span><br><span class="line">-v: 显示传输过程中的详细信息</span><br><span class="line">-P: 显示文件传输的进度信息</span><br><span class="line">-z: 传输中进行压缩，提高传输速度</span><br><span class="line"></span><br><span class="line">--password-file： 登录时用到的密码文件，该文件直接把密码包含就可以，用户名需要显式指定</span><br><span class="line">--exclude-from:  指定不需要进行传输的文件和文件夹</span><br><span class="line">--delete: 在 exclude/include 规则生效后执行，假如服务器中文件比传入的文件多，则删除，少的话，则添加。</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在指定文件夹目录时，进入在真实目录前添加 /cygdrive/ 后面跟正常目录就可以了</span></span><br><span class="line">比如密码文件的路径: /cygdrive/C/app/rsync/cwrsync_5.7.2_x86_free/bin/cmi_password.txt </span><br><span class="line">排除文件的路径：/cygdrive/C/app/rsync/cwrsync_5.7.2_x86_free/bin/exclude.txt</span><br><span class="line">本地传送的路径： /cygdrive/C/test -&gt; 表说 C 盘的 <span class="built_in">test</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最后两个参数，表示想要传送的文件夹，以及服务器的 iP 以及认证的用户和模块、</span></span><br><span class="line"> root@your_ip::cmi/ -&gt; 用户名为 root，cmi 表示传入的模块，均在服务端进行配置</span><br></pre></td></tr></table></figure>
+<p>关于密码文件 cmi_password.txt 的内容，写入文件就好</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">123456</span><br></pre></td></tr></table></figure>
+<p>关于排除文件 exclude.txt 的实例</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.idea</span><br><span class="line">l3vpn_not_used</span><br><span class="line">load-dir</span><br><span class="line">_namespaces</span><br></pre></td></tr></table></figure>
+<h2 id="mac-升级rsyncd">mac 升级rsyncd</h2>
+<p>命令执行后，记得重启控制台，才能生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装完 Homebrew 后在命令行终端通过 Homebrew 安装 Rsync：</span></span><br><span class="line">brew install rsync</span><br></pre></td></tr></table></figure>
+<h2 id="总结">总结#</h2>
+<p>使用 rsync 从 windows 同步数据到 linux 很简单，在 linux 作为服务器，windows 作为客户端的情况下：</p>
+<p>linux 分别需要进行三个文件的配置，并且不要忘了给密码文件添加权限。</p>
+<p>windows 仅需要在安装后，直接使用就可以了，无非就是一些参数的添加</p>
+<h2 id="参考链接-2">参考链接</h2>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/michael9/p/11820919.html">为什么要使用 rsync 从 Windows 到 linux 进行同步</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/ky/tags/linux/" rel="tag"># linux</a>
+              <a href="/ky/tags/rsync/" rel="tag"># rsync</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/%E9%98%85%E8%AF%BB/hexo/%E5%B1%95%E7%A4%BApdf/" rel="prev" title="hexo#展示pdf">
+      <i class="fa fa-chevron-left"></i> hexo#展示pdf
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/%E9%98%85%E8%AF%BB/linux/%E9%98%B2%E7%81%AB%E5%A2%99/" rel="next" title="linux#防火墙">
+      linux#防火墙 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">Linux 配置#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">编写配置文件#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows-%E9%85%8D%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">windows 配置#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mac-%E5%8D%87%E7%BA%A7rsyncd"><span class="nav-number">4.</span> <span class="nav-text">mac 升级rsyncd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结#</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5-2"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/ky/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/ky/lib/anime.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/ky/js/utils.js"></script>
+
+<script src="/ky/js/motion.js"></script>
+
+
+<script src="/ky/js/schemes/muse.js"></script>
+
+
+<script src="/ky/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

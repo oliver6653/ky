@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ky/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ky/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ky/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/ky/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/ky/css/main.css">
+
+
+<link rel="stylesheet" href="/ky/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oliver6653.github.io","root":"/ky/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="而背后支撑这个机制得以实现的，就是 Supercell 经过 6 年时间沉淀下来的游戏开发过程中那些公共的、通用的游戏素材和算法。基于这些像乐高积木一样的基础素材和算法，才可以同时支持几个小团队在几周时间内像搭积木一样快速研发出一款新游戏。中台的优势，将通用的功能做成各种各样的积木，特定的场景只需要组装就可以了 所有的中台都是业务中台  数据中台为什么这么火热？我总结下来主要是这么几个原因。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="说透中台#01概要">
+<meta property="og:url" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="而背后支撑这个机制得以实现的，就是 Supercell 经过 6 年时间沉淀下来的游戏开发过程中那些公共的、通用的游戏素材和算法。基于这些像乐高积木一样的基础素材和算法，才可以同时支持几个小团队在几周时间内像搭积木一样快速研发出一款新游戏。中台的优势，将通用的功能做成各种各样的积木，特定的场景只需要组装就可以了 所有的中台都是业务中台  数据中台为什么这么火热？我总结下来主要是这么几个原因。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/2021-12-17-10-48-44.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/2021-12-17-10-56-22.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/2021-12-17-11-09-40.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/2021-12-17-11-25-29.png">
+<meta property="article:published_time" content="2022-07-23T02:21:24.625Z">
+<meta property="article:modified_time" content="2022-07-23T02:21:24.625Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="说透中台">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/2021-12-17-10-48-44.png">
+
+<link rel="canonical" href="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>说透中台#01概要 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/ky/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/ky/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/ky/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/01%E6%A6%82%E8%A6%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ky/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          说透中台#01概要
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-07-23 10:21:24" itemprop="dateCreated datePublished" datetime="2022-07-23T10:21:24+08:00">2022-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ky/categories/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/" itemprop="url" rel="index"><span itemprop="name">说透中台</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>而背后支撑这个机制得以实现的，就是 Supercell 经过 6 年时间沉淀下来的游戏开发过程中那些公共的、通用的游戏素材和算法。基于这些像乐高积木一样的基础素材和算法，才可以同时支持几个小团队在几周时间内像搭积木一样快速研发出一款新游戏。中台的优势，将通用的功能做成各种各样的积木，特定的场景只需要组装就可以了</p>
+<h2 id="所有的中台都是业务中台">所有的中台都是业务中台</h2>
+<p><img src="2021-12-17-10-48-44.png" alt></p>
+<h2 id="数据中台为什么这么火热？我总结下来主要是这么几个原因。">数据中台为什么这么火热？我总结下来主要是这么几个原因。</h2>
+<span id="more"></span>
+<ul>
+<li>见效快。目前大部分传统企业的问题还在于数据不通，“数据孤岛”现象比较严重，数据中台的建设对于痛点的解决直接，驱动力强。</li>
+<li>组织调整负担小。一般来说，有一定规模的企业都已经有了大数据团队或是 BI 团队，这个团队自然就承载着相关的职能，不需要再做大的组织调整。</li>
+<li>有一定技术基础储备。大部分企业都进行了多年的数据仓库建设，或是随着前几年大数据的浪潮，已经构建了多年的大数据技术平台。</li>
+<li>大势所趋。大家都在讲 DT（Data Technology）时代，对于数据的价值，企业的认识也越来越深刻，大家已经意识到数据不再只是一种运营辅助分析的工具，而逐渐成为企业的核心资产和竞争力。</li>
+</ul>
+<h2 id="数据中台和业务中台区别">数据中台和业务中台区别</h2>
+<p>业务中台就是在产生数据，数据中台是做数据的<strong>二次加工</strong>，并将结果再服务于业务，为业务进行数据和智能的赋能。</p>
+<blockquote>
+<p>业务中台与数据中台相辅相成，互相支撑，互为输入输出。业务中台承载了企业的通用业务能力，为多业务线赋能；数据中台通过对于业务数据的二次加工，并反馈回业务中台，为业务进行数据和智能方面的赋能。两者的紧密配合一起为企业构建起了商业战场强大的后方炮火群，这也就构成了最著名的业务数据双中台模式。</p>
+</blockquote>
+<h3 id="中台定义">中台定义</h3>
+<p>中台就像是在前台与后台之间添加的⼀组“变速齿轮”，将前台与后台的速率进行匹配，是前台与后台的桥梁和润滑剂。它为前台而生，易于前台使用，将后台资源顺滑地通过前台导流向用户，支撑企业更好地响应用户</p>
+<h4 id="企业级能力复用平台。">企业级能力复用平台。</h4>
+<ol>
+<li><strong>企业</strong> 。中台建设的事情并不是一个技术问题，而是一个要上升到企业架构的问题。做中台建设的时候，一定是跳出单条业务线、站在企业整体视角来审视业务全景。</li>
+<li><strong>能力</strong>定义了中台主要承载的对象，能力的抽象解释了各种各样中台的存在；</li>
+<li><strong>复用</strong> 定义了中台的核心价值，传统的平台化对于易复用性和前台的用户体验并没有给予足够的关注，中台的提出和兴起，让人们通过可复用性将目光更多的从平台内部设计转换到平台对于前台业务的支撑上；</li>
+</ol>
+<blockquote>
+<p>“复用”是中台更加关注的目标；“可复用性”和“易复用性”是衡量中台建设好坏的重要指标；“业务响应力”和“业务满意度”是考核中台建设进度的重要标准。</p>
+</blockquote>
+<ol start="4">
+<li><strong>平台</strong> 定义了中台的主要形式，区别于传统的应用系统拼凑的方式，通过对于更细粒度能力的识别与平台化沉淀，实现企业能力的柔性复用，更好地支撑前台业务。</li>
+</ol>
+<h3 id="数据中台定义">数据中台定义</h3>
+<p>数据中台比喻成一个数据工厂，通过收集到原材料仓库，经过厂房流水线的数据加工，最终作为数据产品进入到产品仓库，通过数据商店，以各种方式（例如数据 API 的方式）对于前台或是业务中台赋能，整个过程通过控制中心进行协调调度。</p>
+<p><img src="2021-12-17-10-56-22.png" alt></p>
+<p><img src="2021-12-17-11-09-40.png" alt></p>
+<h2 id="Pace-Layered-Application-Strategy">Pace-Layered Application Strategy</h2>
+<p>企业构建的系统从 Pace-Layered 的角度来看可以划分为三类：SOR（Systems of record ），SOD（Systems of differentiation）和 SOI（Systems of innovation）。每一类的系统都有着不同的变化速率，因此也会有不同的生命周期，适合不同的技术架构和不同的开发过程，甚至是采用不同的投资模式。<br>
+<img src="2021-12-17-11-25-29.png" alt></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/ky/tags/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/" rel="tag"># 说透中台</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%80%83%E7%A0%94%E5%A4%A7%E7%BA%B2/%E8%8B%B1%E8%AF%AD/" rel="prev" title="考研大纲#英语">
+      <i class="fa fa-chevron-left"></i> 考研大纲#英语
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E8%AF%B4%E9%80%8F%E4%B8%AD%E5%8F%B0/02%E8%90%BD%E5%9C%B0/" rel="next" title="说透中台#02落地">
+      说透中台#02落地 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E7%9A%84%E4%B8%AD%E5%8F%B0%E9%83%BD%E6%98%AF%E4%B8%9A%E5%8A%A1%E4%B8%AD%E5%8F%B0"><span class="nav-number">1.</span> <span class="nav-text">所有的中台都是业务中台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E4%B9%88%E7%81%AB%E7%83%AD%EF%BC%9F%E6%88%91%E6%80%BB%E7%BB%93%E4%B8%8B%E6%9D%A5%E4%B8%BB%E8%A6%81%E6%98%AF%E8%BF%99%E4%B9%88%E5%87%A0%E4%B8%AA%E5%8E%9F%E5%9B%A0%E3%80%82"><span class="nav-number">2.</span> <span class="nav-text">数据中台为什么这么火热？我总结下来主要是这么几个原因。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0%E5%92%8C%E4%B8%9A%E5%8A%A1%E4%B8%AD%E5%8F%B0%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">数据中台和业务中台区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E5%8F%B0%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">中台定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%81%E4%B8%9A%E7%BA%A7%E8%83%BD%E5%8A%9B%E5%A4%8D%E7%94%A8%E5%B9%B3%E5%8F%B0%E3%80%82"><span class="nav-number">3.1.1.</span> <span class="nav-text">企业级能力复用平台。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%8F%B0%E5%AE%9A%E4%B9%89"><span class="nav-number">3.2.</span> <span class="nav-text">数据中台定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pace-Layered-Application-Strategy"><span class="nav-number">4.</span> <span class="nav-text">Pace-Layered Application Strategy</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/ky/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/ky/lib/anime.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/ky/js/utils.js"></script>
+
+<script src="/ky/js/motion.js"></script>
+
+
+<script src="/ky/js/schemes/muse.js"></script>
+
+
+<script src="/ky/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
