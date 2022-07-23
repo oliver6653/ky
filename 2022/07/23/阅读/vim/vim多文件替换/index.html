@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ky/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ky/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ky/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/ky/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/ky/css/main.css">
+
+
+<link rel="stylesheet" href="/ky/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oliver6653.github.io","root":"/ky/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1、多文件查找 1.1、grep 直接在vim中输入:grep abc * 这是直接调用unix下的grep命令 1.2、vimgrep 基本用法就是 :vimgrep &#x2F;匹配模式&#x2F;[g][j] 要搜索的文件&#x2F;范围 :vim[grep][!] &#x2F;{pattern}&#x2F;[g][j] {file} … g 和 j 是两个可选的标志位，g表示是否把每一行的多个匹配结果都加入。j表示是否搜索完后定位到第一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim#vim多文件替换">
+<meta property="og:url" content="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/vim/vim%E5%A4%9A%E6%96%87%E4%BB%B6%E6%9B%BF%E6%8D%A2/index.html">
+<meta property="og:site_name" content="ky431">
+<meta property="og:description" content="1、多文件查找 1.1、grep 直接在vim中输入:grep abc * 这是直接调用unix下的grep命令 1.2、vimgrep 基本用法就是 :vimgrep &#x2F;匹配模式&#x2F;[g][j] 要搜索的文件&#x2F;范围 :vim[grep][!] &#x2F;{pattern}&#x2F;[g][j] {file} … g 和 j 是两个可选的标志位，g表示是否把每一行的多个匹配结果都加入。j表示是否搜索完后定位到第一个">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-23T15:10:41.758Z">
+<meta property="article:modified_time" content="2022-07-23T15:11:28.533Z">
+<meta property="article:author" content="ght">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/vim/vim%E5%A4%9A%E6%96%87%E4%BB%B6%E6%9B%BF%E6%8D%A2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>vim#vim多文件替换 | ky431</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/ky/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ky431</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">考研金融413</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/ky/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/ky/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">21</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/ky/categories/" rel="section"><i class="categories fa-fw"></i>分类<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/ky/archives/" rel="section"><i class="archives fa-fw"></i>归档<span class="badge">58</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/vim/vim%E5%A4%9A%E6%96%87%E4%BB%B6%E6%9B%BF%E6%8D%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ky/images/avatar.gif">
+      <meta itemprop="name" content="ght">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ky431">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vim#vim多文件替换
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-23 23:10:41 / 修改时间：23:11:28" itemprop="dateCreated datePublished" datetime="2022-07-23T23:10:41+08:00">2022-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ky/categories/vim/" itemprop="url" rel="index"><span itemprop="name">vim</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>1、多文件查找<br>
+1.1、grep<br>
+直接在vim中输入:grep abc * 这是直接调用unix下的grep命令<br>
+1.2、vimgrep<br>
+基本用法就是<br>
+:vimgrep /匹配模式/[g][j] 要搜索的文件/范围<br>
+:vim[grep][!] /{pattern}/[g][j] {file} …<br>
+g 和 j 是两个可选的标志位，g表示是否把每一行的多个匹配结果都加入。j表示是否搜索完后定位到第一个匹配位置。要搜索的文件 可以是具体的文件路径，也可以是带通配符的路径比如 <em>.as **/</em>.as ，**表示递归所有子目录。 要搜索的文件和或搜索范围都可 以写多个，用空格分开。</p>
+<p>例子：<br>
+:vimgrep /&lt;flash&gt;/ **/*.as 搜索当前目录以及所有子目录内as文件中的 “flash”<br>
+:vimgrep /an error/ <em>.c就是在所有的.c文件中搜索an error。<br>
+:vimgrep/an error/</em> 意思是查找当前目录下的文件中的an error，不包括子目录</p>
+<p>1.3、定位输入上述的命令后，可以像输入:make命令，那样定位匹配到的文件位置<br>
+:cnext (:cn)           下一个匹配位置<br>
+:cprevious (:cp)     上一个匹配位置<br>
+:cwindow (:cw)     quickfix窗口，可以选择匹配的文件位置<br>
+:cl(:clist)                查看所有匹配的位置</p>
+<p>2、多文件替换(arg)<br>
+a、加入要处理的文件   :args *.txt<br>
+b、输入对上述文件的动作  :argdo %s/hate/love/gc | update  （这里将hate替换成love，update表示要写入到文件中，否则只作替换而不写入）</p>
+<p>转自:<a target="_blank" rel="noopener" href="http://hi.baidu.com/%EC%F8%CA%A61988/blog/item/d92aa31f3108d8efe1fe0b64.html">http://hi.baidu.com/��ʦ1988/blog/item/d92aa31f3108d8efe1fe0b64.html</a></p>
+<p>在我们的日常工作中，经常需要将多个文件中的某个字段替换为其他的字段，但多数的编辑器只提供了在打开文件中的查找和替换（当然，也有很多强大的编辑器支持多文件查找和替换，如EditPlus支持在所有打开文件中查找和替换等等），那么，在强大的Vim中，如何进行多文件的查找和替换呢？</p>
+<p>答案是利用 args 命令！</p>
+<p>举例说明，如果你想将当前目录下所有类型的文件中的 oldword 替换为 newword，那么只需要打开当前目录下的某个文件，输入如下两条命令并回车：</p>
+<p>:args <em>.</em><br>
+:argdo %s/oldword/newword/egc | update<br>
+接下来的工作就是确认Vim查找到的那个关键词是否要被替换。是则按下 y ，否则按下 n。</p>
+<p>我们解释下所用到的命令：</p>
+<p>第一行，我们使用 args 命令，将当前目录下所有类型的文件都加入到参数列表中（不包括子文件夹中的文件，），以备后续操作。<br>
+args命令我还没完全搞清楚，嘿嘿。实验了下，使用 :args <em>/</em> 的话，是将当前目录下 所有在子文件夹中的目录和子文件夹中的文件（不包括下一级文件）加入参数列表中。了解了这点，你也可以只替换需要的类型，如 :args *.html。举一反三，反不出来的，再去Google，呵呵。第二行，使用 argdo 命令，对参数列表中的文件进行替换操作。s 就是替换命令了，加上 % 指对所有行，即全文匹配。g 指对每一行中所有匹配的地方都执行替换，e 指使用正则模式，为了区分大小写。最后的 c 指每次替换前，都要确认一下。查找操作呢？引用一下别人的命令吧：</p>
+<p>‘<br>
+查找<br>
+:args *.cpp<br>
+:argdo /word<br>
+替换<br>
+:args *.cpp<br>
+:argdo %s/word/NEW/eg | update</p>
+<p>最后说一点，如果操作失误怎么办？上面的命令是直接操作文件，即存盘了的。操作失误？那就狂按 u 吧，</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/ky/tags/vim/" rel="tag"># vim</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/%E9%98%85%E8%AF%BB/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/00%E5%9F%BA%E7%A1%80/" rel="prev" title="高并发系统设计#00基础">
+      <i class="fa fa-chevron-left"></i> 高并发系统设计#00基础
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/%E9%98%85%E8%AF%BB/hexo/hexo%E4%BC%98%E7%A7%80%E5%8F%82%E8%80%83blog/" rel="next" title="hexo#hexo优秀参考blog">
+      hexo#hexo优秀参考blog <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ght</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/ky/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/ky/categories/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/ky/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oliver6653" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oliver6653" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gaowin@163.com" title="E-Mail → mailto:gaowin@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ght</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">113k</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/ky/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/ky/js/utils.js"></script>
+
+<script src="/ky/js/motion.js"></script>
+
+
+<script src="/ky/js/schemes/pisces.js"></script>
+
+
+<script src="/ky/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/ky/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
+
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://oliver6653.github.io/ky/2022/07/23/%E9%98%85%E8%AF%BB/vim/vim%E5%A4%9A%E6%96%87%E4%BB%B6%E6%9B%BF%E6%8D%A2/',]
+      });
+      });
+  </script>
+
+</body>
+</html>

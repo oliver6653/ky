@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ky/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ky/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ky/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/ky/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/ky/css/main.css">
+
+
+<link rel="stylesheet" href="/ky/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oliver6653.github.io","root":"/ky/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="[toc] 第一节 会计报表📊 一、资产负债表 会计恒等式： 资产&#x3D;负债+所有者权益资产&#x3D;负债+所有者权益 资产&#x3D;负债+所有者权益  资产  流动性资产：现金、应收账款、存货 固定资产：厂房及设备净值、无形资产(商誉)、可供出售金融资产、递延所得税资产   负债  流动负债：一年内或大于一年的一个营业周期内需要偿还的债务(应付账款、应付票据和应付费用); 长期负债：到期时间在一年以上的负债(递">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gs公司金融#s2财务报表分析">
+<meta property="og:url" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="ky431">
+<meta property="og:description" content="[toc] 第一节 会计报表📊 一、资产负债表 会计恒等式： 资产&#x3D;负债+所有者权益资产&#x3D;负债+所有者权益 资产&#x3D;负债+所有者权益  资产  流动性资产：现金、应收账款、存货 固定资产：厂房及设备净值、无形资产(商誉)、可供出售金融资产、递延所得税资产   负债  流动负债：一年内或大于一年的一个营业周期内需要偿还的债务(应付账款、应付票据和应付费用); 长期负债：到期时间在一年以上的负债(递">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90toc.png">
+<meta property="article:published_time" content="2022-07-23T02:21:06.303Z">
+<meta property="article:modified_time" content="2022-07-23T15:08:00.735Z">
+<meta property="article:author" content="ght">
+<meta property="article:tag" content="gs公司金融">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90toc.png">
+
+<link rel="canonical" href="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>gs公司金融#s2财务报表分析 | ky431</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/ky/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ky431</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">考研金融413</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/ky/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/ky/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">21</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/ky/categories/" rel="section"><i class="categories fa-fw"></i>分类<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/ky/archives/" rel="section"><i class="archives fa-fw"></i>归档<span class="badge">58</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ky/images/avatar.gif">
+      <meta itemprop="name" content="ght">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ky431">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          gs公司金融#s2财务报表分析
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-23 10:21:06 / 修改时间：23:08:00" itemprop="dateCreated datePublished" datetime="2022-07-23T10:21:06+08:00">2022-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ky/categories/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" itemprop="url" rel="index"><span itemprop="name">gs公司金融</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90toc.png" alt="s2财务报表分析toc"><br>
+[toc]</p>
+<h1>第一节 会计报表📊</h1>
+<h2 id="一、资产负债表">一、资产负债表</h2>
+<p>会计恒等式：</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>资产</mtext><mo>=</mo><mtext>负债</mtext><mo>+</mo><mtext>所有者权益</mtext></mrow><annotation encoding="application/x-tex">资产=负债+所有者权益
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">资</span><span class="mord cjk_fallback">产</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">负</span><span class="mord cjk_fallback">债</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">有</span><span class="mord cjk_fallback">者</span><span class="mord cjk_fallback">权</span><span class="mord cjk_fallback">益</span></span></span></span></span></p>
+<ol>
+<li>资产
+<ul>
+<li>流动性资产：现金、应收账款、存货</li>
+<li>固定资产：厂房及设备净值、无形资产(商誉)、可供出售金融资产、递延所得税资产</li>
+</ul>
+</li>
+<li>负债
+<ul>
+<li>流动负债：一年内或大于一年的一个营业周期内需要偿还的债务(应付账款、应付票据和应付费用);</li>
+<li>长期负债：到期时间在一年以上的负债(递延税款和长期债务)</li>
+</ul>
+</li>
+<li>所有者权益
+<ul>
+<li>股东对公司剩余资产的索取权：普通股、留存收益</li>
+</ul>
+</li>
+</ol>
+<h2 id="二、利润表">二、利润表</h2>
+<p>某一会计期间经营成果的会计报表。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>利润</mtext><mo>=</mo><mtext>收入</mtext><mo>−</mo><mtext>费用</mtext></mrow><annotation encoding="application/x-tex">利润=收入-费用</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">润</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">入</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">费</span><span class="mord cjk_fallback">用</span></span></span></span></p>
+<h2 id="三、现金流量表">三、现金流量表</h2>
+<p>一定会计期间现金和现金等价物流入和流出的报表</p>
+<ol>
+<li>OCF 经营活动产生的现金流量 - 营运<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mi>C</mi><mi>F</mi><mo>=</mo><mi>E</mi><mi>B</mi><mi>I</mi><mi>T</mi><mo>+</mo><mtext>折旧</mtext><mo>−</mo><mtext>公司所得税</mtext></mrow><annotation encoding="application/x-tex">OCF=EBIT+折旧-公司所得税</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">折</span><span class="mord cjk_fallback">旧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">公</span><span class="mord cjk_fallback">司</span><span class="mord cjk_fallback">所</span><span class="mord cjk_fallback">得</span><span class="mord cjk_fallback">税</span></span></span></span></li>
+<li>CFI 投资活动产生的现金流量</li>
+<li>CFF 筹资活动产生的现金流量</li>
+</ol>
+<h1>第二节 财务报表比率分析🔍</h1>
+<h2 id="一、短期偿债能力比率">一、短期偿债能力比率</h2>
+<h3 id="1-流动比率-流动资产-div流动负债">1. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>流动比率</mtext><mo>=</mo><mtext>流动资产</mtext><mo>÷</mo><mtext>流动负债</mtext></mrow><annotation encoding="application/x-tex">流动比率=流动资产\div流动负债</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">流</span><span class="mord cjk_fallback">动</span><span class="mord cjk_fallback">比</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">流</span><span class="mord cjk_fallback">动</span><span class="mord cjk_fallback">资</span><span class="mord cjk_fallback">产</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">流</span><span class="mord cjk_fallback">动</span><span class="mord cjk_fallback">负</span><span class="mord cjk_fallback">债</span></span></span></span></h3>
+<h3 id="2-速动比率-frac-流动资产-存货-流动负债">2. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>速动比率</mtext><mo>=</mo><mfrac><mrow><mtext>流动资产</mtext><mo>−</mo><mtext>存货</mtext></mrow><mtext>流动负债</mtext></mfrac></mrow><annotation encoding="application/x-tex">速动比率=\frac{流动资产-存货}{流动负债}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">速</span><span class="mord cjk_fallback">动</span><span class="mord cjk_fallback">比</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">流</span><span class="mord cjk_fallback mtight">动</span><span class="mord cjk_fallback mtight">负</span><span class="mord cjk_fallback mtight">债</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">流</span><span class="mord cjk_fallback mtight">动</span><span class="mord cjk_fallback mtight">资</span><span class="mord cjk_fallback mtight">产</span><span class="mbin mtight">−</span><span class="mord cjk_fallback mtight">存</span><span class="mord cjk_fallback mtight">货</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></h3>
+<p>存货是流动性最低的流动资产，其账面价值不能准确的反映其市场价值</p>
+<h3 id="3-现金比率-现金-div流动负债">3. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>现金比率</mtext><mo>=</mo><mtext>现金</mtext><mo>÷</mo><mtext>流动负债</mtext></mrow><annotation encoding="application/x-tex">现金比率=现金\div流动负债</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">现</span><span class="mord cjk_fallback">金</span><span class="mord cjk_fallback">比</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">现</span><span class="mord cjk_fallback">金</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">流</span><span class="mord cjk_fallback">动</span><span class="mord cjk_fallback">负</span><span class="mord cjk_fallback">债</span></span></span></span></h3>
+<h2 id="二、长期偿债能力比率">二、长期偿债能力比率</h2>
+<ol>
+<li>
+<p>负债比率</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>负债比率</mtext><mo>=</mo><mfrac><mrow><mtext>总资产</mtext><mo>−</mo><mtext>总权益</mtext></mrow><mtext>总资产</mtext></mfrac><mo>=</mo><mfrac><mtext>总负债</mtext><mtext>总资产</mtext></mfrac></mrow><annotation encoding="application/x-tex">负债比率=\frac{总资产-总权益}{总资产}=\frac{总负债}{总资产}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">负</span><span class="mord cjk_fallback">债</span><span class="mord cjk_fallback">比</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">资</span><span class="mord cjk_fallback mtight">产</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">资</span><span class="mord cjk_fallback mtight">产</span><span class="mbin mtight">−</span><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">权</span><span class="mord cjk_fallback mtight">益</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">资</span><span class="mord cjk_fallback mtight">产</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">负</span><span class="mord cjk_fallback mtight">债</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>产权比率</mtext><mo stretchy="false">(</mo><mtext>负债权益比</mtext><mo stretchy="false">)</mo><mo>=</mo><mfrac><mtext>总负债</mtext><mtext>总权益</mtext></mfrac><mo>=</mo><mfrac><mi>B</mi><mi>S</mi></mfrac></mrow><annotation encoding="application/x-tex">产权比率(负债权益比)=\frac{总负债}{总权益}=\frac{B}{S}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">产</span><span class="mord cjk_fallback">权</span><span class="mord cjk_fallback">比</span><span class="mord cjk_fallback">率</span><span class="mopen">(</span><span class="mord cjk_fallback">负</span><span class="mord cjk_fallback">债</span><span class="mord cjk_fallback">权</span><span class="mord cjk_fallback">益</span><span class="mord cjk_fallback">比</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">权</span><span class="mord cjk_fallback mtight">益</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">负</span><span class="mord cjk_fallback mtight">债</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>权益乘数</mtext><mo>=</mo><mfrac><mtext>总资产</mtext><mtext>总权益</mtext></mfrac></mrow><annotation encoding="application/x-tex">权益乘数=\frac{总资产}{总权益}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">权</span><span class="mord cjk_fallback">益</span><span class="mord cjk_fallback">乘</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">权</span><span class="mord cjk_fallback mtight">益</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">资</span><span class="mord cjk_fallback mtight">产</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+</ul>
+</li>
+<li>
+<p>利息保障倍数</p>
+<ul>
+<li>常用于衡量长期偿债能力的指标</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>利息保障位数</mtext><mo>=</mo><mtext>息税前利润</mtext><mo>÷</mo><mtext>利息</mtext><mo>=</mo><mi>E</mi><mi>B</mi><mi>I</mi><mi>T</mi><mo>÷</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">利息保障位数=息税前利润\div利息=EBIT\div{I}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">息</span><span class="mord cjk_fallback">保</span><span class="mord cjk_fallback">障</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">息</span><span class="mord cjk_fallback">税</span><span class="mord cjk_fallback">前</span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">润</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">息</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span></span></li>
+</ul>
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>现金对利息的保障倍数</mtext><mo>=</mo><mfrac><mrow><mi>E</mi><mi>B</mi><mi>I</mi><mi>T</mi><mo>+</mo><mtext>折旧</mtext></mrow><mi>I</mi></mfrac><mo>=</mo><mi>E</mi><mi>B</mi><mi>I</mi><mi>T</mi><mi>D</mi><mi>A</mi><mo>÷</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">现金对利息的保障倍数=\frac{EBIT+折旧}{I}=EBITDA\div{I}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">现</span><span class="mord cjk_fallback">金</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">息</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">保</span><span class="mord cjk_fallback">障</span><span class="mord cjk_fallback">倍</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">I</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">E</span><span class="mord mathnormal mtight" style="margin-right:0.05017em;">B</span><span class="mord mathnormal mtight" style="margin-right:0.07847em;">I</span><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span><span class="mbin mtight">+</span><span class="mord cjk_fallback mtight">折</span><span class="mord cjk_fallback mtight">旧</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span></span></p>
+</li>
+</ol>
+<h2 id="三、营运能力-资产管理-比率p97">三、营运能力(资产管理)比率p97</h2>
+<p>多大程度上有效的运用资产来获得收入</p>
+<ol>
+<li>
+<p>存货周转率与存货周转天数</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>存货周转率</mtext><mo>=</mo><mfrac><mtext>销售成本</mtext><mtext>存货</mtext></mfrac></mrow><annotation encoding="application/x-tex">存货周转率=\frac{销售成本}{存货}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">货</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">存</span><span class="mord cjk_fallback mtight">货</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">销</span><span class="mord cjk_fallback mtight">售</span><span class="mord cjk_fallback mtight">成</span><span class="mord cjk_fallback mtight">本</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>存货周转天数</mtext><mo>=</mo><mfrac><mrow><mn>365</mn><mtext>天</mtext></mrow><mtext>存货周转率</mtext></mfrac></mrow><annotation encoding="application/x-tex">存货周转天数=\frac{365天}{存货周转率}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">存</span><span class="mord cjk_fallback">货</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">天</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">存</span><span class="mord cjk_fallback mtight">货</span><span class="mord cjk_fallback mtight">周</span><span class="mord cjk_fallback mtight">转</span><span class="mord cjk_fallback mtight">率</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">6</span><span class="mord mtight">5</span><span class="mord cjk_fallback mtight">天</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+</ul>
+</li>
+<li>
+<p>应收账款周转率和应收账款周转天数</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>应收账款周转率</mtext><mo>=</mo><mfrac><mtext>销售收入</mtext><mtext>应收账款</mtext></mfrac></mrow><annotation encoding="application/x-tex">应收账款周转率=\frac{销售收入}{应收账款}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">应</span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">账</span><span class="mord cjk_fallback">款</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">应</span><span class="mord cjk_fallback mtight">收</span><span class="mord cjk_fallback mtight">账</span><span class="mord cjk_fallback mtight">款</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">销</span><span class="mord cjk_fallback mtight">售</span><span class="mord cjk_fallback mtight">收</span><span class="mord cjk_fallback mtight">入</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li>周转天数同上</li>
+</ul>
+</li>
+<li>
+<p>总资产周转率</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>资产周转率</mtext><mo>=</mo><mtext>销售收入</mtext><mo>÷</mo><mtext>总资产</mtext></mrow><annotation encoding="application/x-tex">资产周转率=销售收入\div总资产</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">资</span><span class="mord cjk_fallback">产</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">销</span><span class="mord cjk_fallback">售</span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">入</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">总</span><span class="mord cjk_fallback">资</span><span class="mord cjk_fallback">产</span></span></span></span></li>
+<li>周转天数同上-资产获得销售收入的能力</li>
+</ul>
+</li>
+</ol>
+<h2 id="四、盈利能力指标">四、盈利能力指标</h2>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>销售利润率</mtext><mo>=</mo><mtext>净利润</mtext><mo>÷</mo><mtext>销售收入</mtext></mrow><annotation encoding="application/x-tex">销售利润率=净利润\div销售收入</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">销</span><span class="mord cjk_fallback">售</span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">润</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">净</span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">润</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">销</span><span class="mord cjk_fallback">售</span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">入</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>资产收益率</mtext><mo>=</mo><mfrac><mtext>净利润</mtext><mtext>销售收入</mtext></mfrac><mo>×</mo><mfrac><mtext>销售收入</mtext><mtext>总资产</mtext></mfrac><mo>=</mo><mtext>销售利润率</mtext><mo>×</mo><mtext>资产周转率</mtext></mrow><annotation encoding="application/x-tex">资产收益率=\frac{净利润}{销售收入}\times\frac{销售收入}{总资产}=销售利润率\times资产周转率</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">资</span><span class="mord cjk_fallback">产</span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">益</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">销</span><span class="mord cjk_fallback mtight">售</span><span class="mord cjk_fallback mtight">收</span><span class="mord cjk_fallback mtight">入</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">净</span><span class="mord cjk_fallback mtight">利</span><span class="mord cjk_fallback mtight">润</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">总</span><span class="mord cjk_fallback mtight">资</span><span class="mord cjk_fallback mtight">产</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">销</span><span class="mord cjk_fallback mtight">售</span><span class="mord cjk_fallback mtight">收</span><span class="mord cjk_fallback mtight">入</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">销</span><span class="mord cjk_fallback">售</span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">润</span><span class="mord cjk_fallback">率</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">资</span><span class="mord cjk_fallback">产</span><span class="mord cjk_fallback">周</span><span class="mord cjk_fallback">转</span><span class="mord cjk_fallback">率</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>权益报酬率</mtext><mo stretchy="false">(</mo><mi>R</mi><mi>O</mi><mi>E</mi><mo stretchy="false">)</mo><mo>=</mo><mtext>净利润</mtext><mo>÷</mo><mtext>总权益</mtext></mrow><annotation encoding="application/x-tex">权益报酬率(ROE)=净利润\div总权益</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">权</span><span class="mord cjk_fallback">益</span><span class="mord cjk_fallback">报</span><span class="mord cjk_fallback">酬</span><span class="mord cjk_fallback">率</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">净</span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">润</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">÷</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">总</span><span class="mord cjk_fallback">权</span><span class="mord cjk_fallback">益</span></span></span></span></li>
+</ol>
+<h2 id="五、度量市场价值的指标p99">五、度量市场价值的指标p99</h2>
+<h2 id="六、备注">六、备注</h2>
+<p><a target="_blank" rel="noopener" href="https://www.investopedia.com/ask/answers/09/ebitda-ebitdar-ebitdarm.asp">EBITDA</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/ky/tags/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" rel="tag"># gs公司金融</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s1%E5%85%AC%E5%8F%B8%E8%B4%A2%E5%8A%A1%E6%A6%82%E8%BF%B0/" rel="prev" title="gs公司金融#s1公司财务概述">
+      <i class="fa fa-chevron-left"></i> gs公司金融#s1公司财务概述
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s3%E9%95%BF%E6%9C%9F%E8%B4%A2%E5%8A%A1%E8%A7%84%E5%88%92/" rel="next" title="gs公司金融#s3长期财务规划">
+      gs公司金融#s3长期财务规划 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">第一节 会计报表📊</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E8%B5%84%E4%BA%A7%E8%B4%9F%E5%80%BA%E8%A1%A8"><span class="nav-number">1.1.</span> <span class="nav-text">一、资产负债表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%A9%E6%B6%A6%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">二、利润表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%8E%B0%E9%87%91%E6%B5%81%E9%87%8F%E8%A1%A8"><span class="nav-number">1.3.</span> <span class="nav-text">三、现金流量表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">第二节 财务报表比率分析🔍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%9F%AD%E6%9C%9F%E5%81%BF%E5%80%BA%E8%83%BD%E5%8A%9B%E6%AF%94%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text">一、短期偿债能力比率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%B5%81%E5%8A%A8%E6%AF%94%E7%8E%87-%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7-div%E6%B5%81%E5%8A%A8%E8%B4%9F%E5%80%BA"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 流动比率&#x3D;流动资产÷流动负债流动比率&#x3D;流动资产\div流动负债流动比率&#x3D;流动资产÷流动负债</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%80%9F%E5%8A%A8%E6%AF%94%E7%8E%87-frac-%E6%B5%81%E5%8A%A8%E8%B5%84%E4%BA%A7-%E5%AD%98%E8%B4%A7-%E6%B5%81%E5%8A%A8%E8%B4%9F%E5%80%BA"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 速动比率&#x3D;流动资产−存货流动负债速动比率&#x3D;\frac{流动资产-存货}{流动负债}速动比率&#x3D;流动负债流动资产−存货​</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%8E%B0%E9%87%91%E6%AF%94%E7%8E%87-%E7%8E%B0%E9%87%91-div%E6%B5%81%E5%8A%A8%E8%B4%9F%E5%80%BA"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 现金比率&#x3D;现金÷流动负债现金比率&#x3D;现金\div流动负债现金比率&#x3D;现金÷流动负债</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%95%BF%E6%9C%9F%E5%81%BF%E5%80%BA%E8%83%BD%E5%8A%9B%E6%AF%94%E7%8E%87"><span class="nav-number">2.2.</span> <span class="nav-text">二、长期偿债能力比率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%90%A5%E8%BF%90%E8%83%BD%E5%8A%9B-%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86-%E6%AF%94%E7%8E%87p97"><span class="nav-number">2.3.</span> <span class="nav-text">三、营运能力(资产管理)比率p97</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%9B%88%E5%88%A9%E8%83%BD%E5%8A%9B%E6%8C%87%E6%A0%87"><span class="nav-number">2.4.</span> <span class="nav-text">四、盈利能力指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%BA%A6%E9%87%8F%E5%B8%82%E5%9C%BA%E4%BB%B7%E5%80%BC%E7%9A%84%E6%8C%87%E6%A0%87p99"><span class="nav-number">2.5.</span> <span class="nav-text">五、度量市场价值的指标p99</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%A4%87%E6%B3%A8"><span class="nav-number">2.6.</span> <span class="nav-text">六、备注</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ght</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/ky/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/ky/categories/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/ky/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oliver6653" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oliver6653" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gaowin@163.com" title="E-Mail → mailto:gaowin@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ght</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">113k</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/ky/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/ky/js/utils.js"></script>
+
+<script src="/ky/js/motion.js"></script>
+
+
+<script src="/ky/js/schemes/pisces.js"></script>
+
+
+<script src="/ky/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/ky/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
+
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s2%E8%B4%A2%E5%8A%A1%E6%8A%A5%E8%A1%A8%E5%88%86%E6%9E%90/',]
+      });
+      });
+  </script>
+
+</body>
+</html>

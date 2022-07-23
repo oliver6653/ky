@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ky/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ky/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ky/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/ky/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/ky/css/main.css">
+
+
+<link rel="stylesheet" href="/ky/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oliver6653.github.io","root":"/ky/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第一节 投资决策方法[1] 资本预算即决定接受还是拒绝某个项目的决策过程  方法  净现值法 回收期法 内部收益率法 平均会计利润法 盈利指数法    一、净现值法  含义NPV&#x3D;−C0+∑i&#x3D;1TCi(1+r)iNPV&#x3D;-C_0+\sum^T_{i&#x3D;1}\frac{C_i}{(1+r)^i}NPV&#x3D;−C0​+∑i&#x3D;1T​(1+r)iCi​​  投资法则：接受净现值大于0的项目，拒绝净现值为负的项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gs公司金融#s5资本预算">
+<meta property="og:url" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/index.html">
+<meta property="og:site_name" content="ky431">
+<meta property="og:description" content="第一节 投资决策方法[1] 资本预算即决定接受还是拒绝某个项目的决策过程  方法  净现值法 回收期法 内部收益率法 平均会计利润法 盈利指数法    一、净现值法  含义NPV&#x3D;−C0+∑i&#x3D;1TCi(1+r)iNPV&#x3D;-C_0+\sum^T_{i&#x3D;1}\frac{C_i}{(1+r)^i}NPV&#x3D;−C0​+∑i&#x3D;1T​(1+r)iCi​​  投资法则：接受净现值大于0的项目，拒绝净现值为负的项">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E7%8E%B0%E9%87%91%E6%B5%81%E9%87%8F%E8%A1%A8.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%87%80%E7%8E%B0%E5%80%BC%E9%A2%98%E7%9B%AE.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%9B%9E%E6%94%B6%E6%9C%9F%E8%A1%A8%E6%A0%BC.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/%E6%8A%95%E8%B5%84%E5%9B%9E%E6%94%B6%E6%9C%9F%E7%9A%84%E7%BC%BA%E7%82%B9.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E6%8A%95%E8%B5%84%E5%9B%9E%E6%94%B6%E6%9C%9F%E9%A2%98%E7%9B%AE.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E6%8A%98%E7%8E%B0%E5%9B%9E%E6%94%B6%E6%9C%9F%E6%B3%95.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%86%85%E9%83%A8%E6%94%B6%E7%9B%8A%E7%8E%87%E4%BB%8B%E7%BB%8D.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5IRR%E9%A2%98%E7%9B%AE.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%86%B3%E7%AD%96%E6%A0%87%E5%87%861.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%86%B3%E7%AD%96%E8%A1%A8%E6%A0%BC.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%86%B3%E7%AD%96%E6%A0%87%E5%87%862.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5IRR%E6%8A%95%E8%B5%84%E8%8C%83%E5%9B%B4.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E9%A1%B9%E7%9B%AE%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%A2%9E%E9%87%8F%E5%86%85%E9%83%A8%E6%94%B6%E7%9B%8A%E7%8E%87.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E4%BA%8C%E4%B8%AA%E9%A1%B9%E7%9B%AEnpv.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E9%80%89%E6%8B%A9%E6%9C%80%E4%BC%98%E9%A1%B9%E7%9B%AE%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-18-23-51.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-18-25-58.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%B9%B3%E5%9D%87%E4%BC%9A%E8%AE%A1%E5%88%A9%E6%B6%A6%E7%8E%87%E9%A2%98%E7%9B%AE.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-18-31-00.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-18-33-43.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-18-41-25.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-19-58-47.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-20-08-09.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-26-20-25-59.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-27-09-29-44.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-27-09-30-26.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-27-11-01-53.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-27-11-02-45.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90%E9%A2%98%E7%9B%AE.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E4%BA%8C%E5%8F%89%E6%A0%91%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/image_2021-07-27-14-14-38.png">
+<meta property="article:published_time" content="2022-07-23T02:21:06.827Z">
+<meta property="article:modified_time" content="2022-07-23T15:08:05.127Z">
+<meta property="article:author" content="ght">
+<meta property="article:tag" content="gs公司金融">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/s5%E7%8E%B0%E9%87%91%E6%B5%81%E9%87%8F%E8%A1%A8.png">
+
+<link rel="canonical" href="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>gs公司金融#s5资本预算 | ky431</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/ky/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ky431</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">考研金融413</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/ky/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/ky/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">21</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/ky/categories/" rel="section"><i class="categories fa-fw"></i>分类<span class="badge">19</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/ky/archives/" rel="section"><i class="archives fa-fw"></i>归档<span class="badge">58</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ky/images/avatar.gif">
+      <meta itemprop="name" content="ght">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ky431">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          gs公司金融#s5资本预算
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-07-23 10:21:06 / 修改时间：23:08:05" itemprop="dateCreated datePublished" datetime="2022-07-23T10:21:06+08:00">2022-07-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ky/categories/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" itemprop="url" rel="index"><span itemprop="name">gs公司金融</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1>第一节 投资决策方法<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></h1>
+<p>资本预算即决定接受还是拒绝某个项目的决策过程</p>
+<ol>
+<li>方法
+<ol>
+<li><strong>净现值法</strong></li>
+<li>回收期法</li>
+<li><strong>内部收益率法</strong></li>
+<li>平均会计利润法</li>
+<li>盈利指数法</li>
+</ol>
+</li>
+</ol>
+<h2 id="一、净现值法">一、净现值法</h2>
+<ol>
+<li>含义<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>P</mi><mi>V</mi><mo>=</mo><mo>−</mo><msub><mi>C</mi><mn>0</mn></msub><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>T</mi></msubsup><mfrac><msub><mi>C</mi><mi>i</mi></msub><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>r</mi><msup><mo stretchy="false">)</mo><mi>i</mi></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">NPV=-C_0+\sum^T_{i=1}\frac{C_i}{(1+r)^i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord">−</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.501231em;vertical-align:-0.52em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.981231em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8884309999999999em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mclose mtight"><span class="mclose mtight">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7570857142857143em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4101em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:-0.07153em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>
+<ul>
+<li>投资法则：接受净现值大于0的项目，拒绝净现值为负的项目。如果有多个互斥的投资项目相互竞争，选取净现值最大的投资项目。</li>
+</ul>
+</li>
+<li>净现值法的特点
+<ol>
+<li>使用了现金流量而不是会计利润。利润并不等同于现金流量，不能在资本预算中直接使用</li>
+<li>包含了项目的全部现金流量。</li>
+<li>对现金流量进行了合理的折现<br>
+<img src="s5%E7%8E%B0%E9%87%91%E6%B5%81%E9%87%8F%E8%A1%A8.png" alt="s5现金流量表"><br>
+<img src="s5%E5%87%80%E7%8E%B0%E5%80%BC%E9%A2%98%E7%9B%AE.png" alt="s5净现值题目"></li>
+</ol>
+</li>
+</ol>
+<h2 id="二、回收期法">二、回收期法</h2>
+<ol>
+<li>回收期的概念
+<ul>
+<li>指收回全部初始投资所需要的时间，通常以年为单位<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>投资回收期</mtext><mo>=</mo><mfrac><mtext>初始投资额</mtext><mtext>单期现金流量</mtext></mfrac></mrow><annotation encoding="application/x-tex">投资回收期=\frac{初始投资额}{单期现金流量}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">投</span><span class="mord cjk_fallback">资</span><span class="mord cjk_fallback">回</span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">期</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">单</span><span class="mord cjk_fallback mtight">期</span><span class="mord cjk_fallback mtight">现</span><span class="mord cjk_fallback mtight">金</span><span class="mord cjk_fallback mtight">流</span><span class="mord cjk_fallback mtight">量</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">初</span><span class="mord cjk_fallback mtight">始</span><span class="mord cjk_fallback mtight">投</span><span class="mord cjk_fallback mtight">资</span><span class="mord cjk_fallback mtight">额</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+</ul>
+</li>
+<li>选择标准
+<ul>
+<li>如果只有一个项目可供选择，该项目的投资回收期要小于决策者规定的最高标准</li>
+<li>如果有多个项目可供选择，在项目的投资回收期小于决策者要求的最高标准的前提下，从中选择回收期最短的项目。<br>
+<img src="s5%E5%9B%9E%E6%94%B6%E6%9C%9F%E8%A1%A8%E6%A0%BC.png" alt="s5回收期表格"></li>
+</ul>
+</li>
+<li>缺点<br>
+<img src="%E6%8A%95%E8%B5%84%E5%9B%9E%E6%94%B6%E6%9C%9F%E7%9A%84%E7%BC%BA%E7%82%B9.png" alt="投资回收期的缺点"><br>
+<img src="s5%E6%8A%95%E8%B5%84%E5%9B%9E%E6%94%B6%E6%9C%9F%E9%A2%98%E7%9B%AE.png" alt="s5投资回收期题目"><br>
+<img src="s5%E6%8A%98%E7%8E%B0%E5%9B%9E%E6%94%B6%E6%9C%9F%E6%B3%95.png" alt="s5折现回收期法"></li>
+</ol>
+<h2 id="二、内部收益率法">二、内部收益率法</h2>
+<ol>
+<li>介绍<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>P</mi><mi>V</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">NPV=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span><br>
+<img src="s5%E5%86%85%E9%83%A8%E6%94%B6%E7%9B%8A%E7%8E%87%E4%BB%8B%E7%BB%8D.png" alt="s5内部收益率介绍"><br>
+<img src="s5IRR%E9%A2%98%E7%9B%AE.png" alt="s5IRR题目"></li>
+<li>存在的问题<br>
+<img src="s5%E5%86%B3%E7%AD%96%E6%A0%87%E5%87%861.png" alt="s5决策标准1"><br>
+<img src="s5%E5%86%B3%E7%AD%96%E8%A1%A8%E6%A0%BC.png" alt="s5决策表格"><br>
+<img src="s5%E5%86%B3%E7%AD%96%E6%A0%87%E5%87%862.png" alt="s5决策标准2"><br>
+<img src="s5IRR%E6%8A%95%E8%B5%84%E8%8C%83%E5%9B%B4.png" alt="s5IRR投资范围"></li>
+<li>项目类型<br>
+<img src="s5%E9%A1%B9%E7%9B%AE%E7%B1%BB%E5%9E%8B.png" alt="s5项目类型"></li>
+<li>增量内部收益率<br>
+<img src="s5%E5%A2%9E%E9%87%8F%E5%86%85%E9%83%A8%E6%94%B6%E7%9B%8A%E7%8E%87.png" alt="s5增量内部收益率"><br>
+<img src="s5%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%97%AE%E9%A2%98.png" alt="s5时间序列问题"><br>
+<img src="s5%E4%BA%8C%E4%B8%AA%E9%A1%B9%E7%9B%AEnpv.png" alt="s5二个项目npv"></li>
+<li>三种方法选择最优项目<br>
+<img src="s5%E9%80%89%E6%8B%A9%E6%9C%80%E4%BC%98%E9%A1%B9%E7%9B%AE%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB.png" alt="s5选择最优项目方法汇总"><br>
+<img src="image_2021-07-26-18-23-51.png" alt="image_2021-07-26-18-23-51"></li>
+</ol>
+<h2 id="四、平均会计利润率">四、平均会计利润率</h2>
+<p>1.公式<br>
+<img src="image_2021-07-26-18-25-58.png" alt="image_2021-07-26-18-25-58"><br>
+<img src="s5%E5%B9%B3%E5%9D%87%E4%BC%9A%E8%AE%A1%E5%88%A9%E6%B6%A6%E7%8E%87%E9%A2%98%E7%9B%AE.png" alt="s5平均会计利润率题目"><br>
+<img src="image_2021-07-26-18-31-00.png" alt="s5平均会计利润率题目1"><br>
+<img src="image_2021-07-26-18-33-43.png" alt="s5平均会计利润率题目2"><br>
+2. 决策标准<br>
+<img src="image_2021-07-26-18-41-25.png" alt="决策标准"></p>
+<h1>第二节 增量现金流</h1>
+<h2 id="一、项目现金流的构成">一、项目现金流的构成</h2>
+<ol>
+<li>初始现金流
+<ol>
+<li>固定资产投资</li>
+<li>净营运资本投入</li>
+<li>其他费用</li>
+<li>原有固定资产变价收入和清理费用</li>
+</ol>
+</li>
+<li>营业现金流OCF
+<ul>
+<li>项目投入运行后，在整个经营寿命期间内因生产经营活动而产生的现金流量</li>
+</ul>
+<ol>
+<li>产品或服务销售所得到的现金流入</li>
+<li>各项营业现金支出，如原材料购置费用、职工工资支出、燃料动力费用支出、销售费用支出、期间费用等</li>
+<li>税金支出</li>
+</ol>
+</li>
+<li>终结现金流(项目终结时所发生的各种现金流)
+<ul>
+<li>固定资产的变价收入，投资时垫支的营运资本的收回，停止使用的土地的变价收入，以及为结束项目而发生的各种清理费用等</li>
+<li>包含2的内容</li>
+<li>税处理
+<ul>
+<li>账面价值低于市场价值，差额部分需要支付所得税</li>
+<li>反之可作为税收冲销<br>
+<img src="image_2021-07-26-19-58-47.png" alt="项目现金流的构成"><br>
+<img src="image_2021-07-26-20-08-09.png" alt="项目现金流的构成题目"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="二、估计项目现金流时要注意的几个问题">二、估计项目现金流时要注意的几个问题</h2>
+<ol>
+<li>增量现金流原则
+<ol>
+<li>相对于放弃项目，企业接受项目条件下改变量</li>
+</ol>
+<ul>
+<li>协同效应：对公司原有业务产生积极的影响</li>
+<li>锓蚀作用：消极</li>
+</ul>
+</li>
+<li>折旧的影响
+<ul>
+<li>折旧可以作为成本项目从企业销售收入中扣除，故其降低了企业的应纳税所得额</li>
+<li>可以改变折旧额的时间分页<br>
+<img src="image_2021-07-26-20-25-59.png" alt="折旧题目"></li>
+</ul>
+</li>
+<li>沉没成本
+<ul>
+<li>已经使用掉且无法收回的成本。不影响项目的现金流，因此不影响项目的投资决策。</li>
+<li>不属于增量现金流</li>
+</ul>
+</li>
+<li>机会成本(放弃次优成本)
+<ul>
+<li>指当把一定的经济资源用于某一项目时，同时放弃的其他用途产生的潜在收益中的最大值</li>
+</ul>
+</li>
+<li>分推费用的计算
+<ul>
+<li>对那些确因本投资项目而引起的分摊费用，应计入投资项目的现金流量</li>
+<li>对那些企业原来就要发生的，则不计入</li>
+</ul>
+</li>
+<li>营运资本需求的收回
+<ul>
+<li>在项目进行期间和项目终结时，投入的营运资本能够以现金的形式收回。
+<ul>
+<li>投入项目时，记作现金流出</li>
+<li>从项目中收回时，记作现金流入</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>通货膨胀的影响
+<ul>
+<li>调整投资项目的现金流量，以扣除通货膨胀的影响（如按不变价格计算现金流量）</li>
+<li>调整贴现率，以抵消通货膨胀带来的现金流量增加的影响（如采用『贴现率=无通货膨胀时的贴现率+通货膨胀率』的方法）<br>
+<img src="image_2021-07-27-09-29-44.png" alt="ocf题目"><br>
+<img src="image_2021-07-27-09-30-26.png" alt="ocf题目答案"></li>
+</ul>
+</li>
+<li>OCF三种计算方法
+<ol>
+<li>自上而下法：销售收入-现金成本-税收</li>
+<li>自下而上法：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>销售收入</mtext><mo>−</mo><mtext>现金成本</mtext><mo>−</mo><mtext>折旧</mtext><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mtext>税率</mtext><mo stretchy="false">)</mo><mo>+</mo><mtext>折旧</mtext></mrow><annotation encoding="application/x-tex">(销售收入-现金成本-折旧)\times(1-税率)+折旧</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">销</span><span class="mord cjk_fallback">售</span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">入</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">现</span><span class="mord cjk_fallback">金</span><span class="mord cjk_fallback">成</span><span class="mord cjk_fallback">本</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">折</span><span class="mord cjk_fallback">旧</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">税</span><span class="mord cjk_fallback">率</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">折</span><span class="mord cjk_fallback">旧</span></span></span></span></li>
+<li>税盾法：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mtext>销售收入</mtext><mo>−</mo><mtext>现金成本</mtext><mo stretchy="false">)</mo><mo>×</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mtext>税率</mtext><mo stretchy="false">)</mo><mo>+</mo><mtext>折旧</mtext><mo>×</mo><mtext>税率</mtext></mrow><annotation encoding="application/x-tex">(销售收入-现金成本)\times(1-税率)+折旧\times税率</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord cjk_fallback">销</span><span class="mord cjk_fallback">售</span><span class="mord cjk_fallback">收</span><span class="mord cjk_fallback">入</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">现</span><span class="mord cjk_fallback">金</span><span class="mord cjk_fallback">成</span><span class="mord cjk_fallback">本</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">税</span><span class="mord cjk_fallback">率</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord cjk_fallback">折</span><span class="mord cjk_fallback">旧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">税</span><span class="mord cjk_fallback">率</span></span></span></span></li>
+</ol>
+</li>
+</ol>
+<h1>第三节 资本预算中的风险分析</h1>
+<p>讨论在不确定条件下进行资本投资决策</p>
+<h2 id="一、敏感性分析和场景分析">一、敏感性分析和场景分析</h2>
+<ol>
+<li>敏感性分析
+<ul>
+<li>假定其他变量处于正常估计量，计算某一变量的不同状态下可能估计出的NPV</li>
+<li>属于单变量分析<br>
+<img src="image_2021-07-27-11-01-53.png" alt="不同变量的估计表格"><br>
+<img src="image_2021-07-27-11-02-45.png" alt="敏感性分析NPV"></li>
+<li>不足
+<ol>
+<li>产生『安全错觉』所有情况都产生正NPV</li>
+<li>孤立地处理每个变量的变化</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>场景分析
+<ul>
+<li>是一种变异的敏感性分析，不同场景综合了各种变量的影响<br>
+<img src="s5%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90%E9%A2%98%E7%9B%AE.png" alt="s5场景分析题目"></li>
+</ul>
+</li>
+</ol>
+<h2 id="二、盈亏平衡分析★">二、盈亏平衡分析★</h2>
+<p>指根据成本、销售收入、利润等因素之间的函数关系，预测企业实现盈亏平衡时所需达到的销售量。</p>
+<ol>
+<li>会计盈亏平衡：确定某一产品或公司的销售量，在该销售量上收入正好弥补成本，该公司净利润为零。
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>会计利润的盈亏平衡点</mtext><mo>=</mo><mfrac><mrow><mtext>固定成本</mtext><mo>+</mo><mtext>折旧</mtext></mrow><mrow><mtext>销售单价</mtext><mo>−</mo><mtext>单位变动成本</mtext></mrow></mfrac></mrow><annotation encoding="application/x-tex">会计利润的盈亏平衡点=\frac{固定成本+折旧}{销售单价-单位变动成本}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">会</span><span class="mord cjk_fallback">计</span><span class="mord cjk_fallback">利</span><span class="mord cjk_fallback">润</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">盈</span><span class="mord cjk_fallback">亏</span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">衡</span><span class="mord cjk_fallback">点</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.275662em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">销</span><span class="mord cjk_fallback mtight">售</span><span class="mord cjk_fallback mtight">单</span><span class="mord cjk_fallback mtight">价</span><span class="mbin mtight">−</span><span class="mord cjk_fallback mtight">单</span><span class="mord cjk_fallback mtight">位</span><span class="mord cjk_fallback mtight">变</span><span class="mord cjk_fallback mtight">动</span><span class="mord cjk_fallback mtight">成</span><span class="mord cjk_fallback mtight">本</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cjk_fallback mtight">固</span><span class="mord cjk_fallback mtight">定</span><span class="mord cjk_fallback mtight">成</span><span class="mord cjk_fallback mtight">本</span><span class="mbin mtight">+</span><span class="mord cjk_fallback mtight">折</span><span class="mord cjk_fallback mtight">旧</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li>推导：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>I</mi><mo stretchy="false">(</mo><msub><mi>Q</mi><mi>A</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>P</mi><mo>−</mo><mi>V</mi><mi>C</mi><mo stretchy="false">)</mo><mo>×</mo><msub><mi>Q</mi><mi>A</mi></msub><mo>−</mo><mi>F</mi><mi>C</mi><mo>−</mo><mi>D</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">NI(Q_A)=(P-VC)\times{Q_A}-FC-D=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>净现值的盈亏平衡点</mtext><mo>=</mo><mfrac><mrow><mi>E</mi><mi>A</mi><mi>C</mi><mo>+</mo><mi>F</mi><mi>C</mi><mo>×</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mi>D</mi><mo>×</mo><mi>t</mi></mrow><mrow><mo stretchy="false">(</mo><mi>P</mi><mo>−</mo><mi>V</mi><mi>C</mi><mo stretchy="false">)</mo><mo>×</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">净现值的盈亏平衡点=\frac{EAC+FC\times{(1-t)}-D\times{t}}{(P-VC)\times{(1-t)}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">净</span><span class="mord cjk_fallback">现</span><span class="mord cjk_fallback">值</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">盈</span><span class="mord cjk_fallback">亏</span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">衡</span><span class="mord cjk_fallback">点</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.53em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.13889em;">P</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span><span class="mclose mtight">)</span><span class="mbin mtight">×</span><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">t</span><span class="mclose mtight">)</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05764em;">E</span><span class="mord mathnormal mtight">A</span><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span><span class="mord mathnormal mtight" style="margin-right:0.07153em;">C</span><span class="mbin mtight">×</span><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">t</span><span class="mclose mtight">)</span></span><span class="mbin mtight">−</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="mbin mtight">×</span><span class="mord mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>
+<ul>
+<li>推导设销售量为x则:<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>x</mi><mo stretchy="false">(</mo><mi>P</mi><mo>−</mo><mi>V</mi><mi>C</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mi>C</mi><mo>−</mo><mi>D</mi><mo stretchy="false">]</mo><mo>×</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><mi>D</mi><mo>−</mo><mi>E</mi><mi>A</mi><mi>C</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">[x(P-VC)-FC-D]\times{(1-t)}+D-EAC=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li>
+<li>EAC:coupon</li>
+</ul>
+</li>
+</ol>
+<h2 id="三、蒙特卡罗模拟v4t01-24">三、蒙特卡罗模拟v4t01:24</h2>
+<p>指在投资测算基本财务模型的基础上，考虑风险变量因素的动态变化（即不确定性），将风险变量（或子变量）原有的静态取值通过随机抽样实现动态取值，得到可以计算动态经济评价指标的模拟试验。</p>
+<h2 id="四、决策权">四、决策权</h2>
+<p>指将概率论有逻辑地应用于决策选择中的一种图解方法。<br>
+<img src="s5%E4%BA%8C%E5%8F%89%E6%A0%91%E6%A8%A1%E5%9E%8B.png" alt="s5二叉树模型"><br>
+<img src="image_2021-07-27-14-14-38.png" alt="s5二叉树题目"></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>2021-07-26 17:01 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/ky/tags/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/" rel="tag"># gs公司金融</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s4%E6%8A%98%E7%8E%B0%E4%B8%8E%E4%BB%B7%E5%80%BC/" rel="prev" title="gs公司金融#s4折现与价值">
+      <i class="fa fa-chevron-left"></i> gs公司金融#s4折现与价值
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s6%E9%A3%8E%E9%99%A9%E4%B8%8E%E6%94%B6%E7%9B%8A/" rel="next" title="gs公司金融#s6风险与收益">
+      gs公司金融#s6风险与收益 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">第一节 投资决策方法[1]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%87%80%E7%8E%B0%E5%80%BC%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">一、净现值法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%9B%9E%E6%94%B6%E6%9C%9F%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">二、回收期法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%86%85%E9%83%A8%E6%94%B6%E7%9B%8A%E7%8E%87%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">二、内部收益率法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%B9%B3%E5%9D%87%E4%BC%9A%E8%AE%A1%E5%88%A9%E6%B6%A6%E7%8E%87"><span class="nav-number">1.4.</span> <span class="nav-text">四、平均会计利润率</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">第二节 增量现金流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%A1%B9%E7%9B%AE%E7%8E%B0%E9%87%91%E6%B5%81%E7%9A%84%E6%9E%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text">一、项目现金流的构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BC%B0%E8%AE%A1%E9%A1%B9%E7%9B%AE%E7%8E%B0%E9%87%91%E6%B5%81%E6%97%B6%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%87%A0%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">二、估计项目现金流时要注意的几个问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">第三节 资本预算中的风险分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%95%8F%E6%84%9F%E6%80%A7%E5%88%86%E6%9E%90%E5%92%8C%E5%9C%BA%E6%99%AF%E5%88%86%E6%9E%90"><span class="nav-number">3.1.</span> <span class="nav-text">一、敏感性分析和场景分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%9B%88%E4%BA%8F%E5%B9%B3%E8%A1%A1%E5%88%86%E6%9E%90%E2%98%85"><span class="nav-number">3.2.</span> <span class="nav-text">二、盈亏平衡分析★</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%A8%A1%E6%8B%9Fv4t01-24"><span class="nav-number">3.3.</span> <span class="nav-text">三、蒙特卡罗模拟v4t01:24</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%86%B3%E7%AD%96%E6%9D%83"><span class="nav-number">3.4.</span> <span class="nav-text">四、决策权</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ght</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/ky/archives/">
+        
+          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/ky/categories/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/ky/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oliver6653" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oliver6653" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gaowin@163.com" title="E-Mail → mailto:gaowin@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ght</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">113k</span>
+</div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/ky/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.min.js"></script>
+  <script src="/ky/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/ky/js/utils.js"></script>
+
+<script src="/ky/js/motion.js"></script>
+
+
+<script src="/ky/js/schemes/pisces.js"></script>
+
+
+<script src="/ky/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/ky/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
+
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://oliver6653.github.io/ky/2022/07/23/gs%E5%85%AC%E5%8F%B8%E9%87%91%E8%9E%8D/s5%E8%B5%84%E6%9C%AC%E9%A2%84%E7%AE%97/',]
+      });
+      });
+  </script>
+
+</body>
+</html>
