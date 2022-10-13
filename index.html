@@ -216,7 +216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-13 10:32:41" itemprop="dateModified" datetime="2022-10-13T10:32:41+08:00">2022-10-13</time>
+                <time title="修改时间：2022-10-13 11:05:28" itemprop="dateModified" datetime="2022-10-13T11:05:28+08:00">2022-10-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>1.9k</span>
             </span>
 
         </div>
@@ -252,6 +252,9 @@
 <strong>数据竞争（Data Race）</strong>: 当多个线程同时访问同一数据，并且至少有一个线程会写这个数据的时候，如果我们不采取防护措施，那么就会导致并发 Bug</p>
 <p><strong>竞态条件（Race Condition）</strong>： 指的是程序的执行结果依赖线程执行的顺序。那面对数据竞争和竞态条件问题，又该如何保证线程的安全性呢？其实这两类问题，都可以用互斥这个技术方案，而实现互斥的方案有很多，CPU 提供了相关的互斥指令，操作系统、编程语言也会提供相关的 API。从逻辑上来看，我们可以统一归为：<strong>锁</strong>。<br>
 每一步骤是线程安全的，但是组合到组合到一块线程不安全。</p>
+<blockquote>
+<p>转账操作里面有个判断条件——转出金额不能大于账户余额，但在并发环境里面，如果不加控制，当多个线程同时对一个账号执行转出操作时，就有可能出现超额转出问题。假设账户 A 有余额 200，线程 1 和线程 2 都要从账户 A 转出 150，在下面的代码里，有可能线程 1 和线程 2 同时执行到第 6 行，这样线程 1 和线程 2 都会发现转出金额 150 小于账户余额 200，于是就会发生超额转出的情况。</p>
+</blockquote>
 <h1>活跃性问题</h1>
 <p>所谓活跃性问题，指的是某个操作无法执行下去。我们常见的“死锁”就是一种典型的活跃性问题，当然除了死锁外，还有两种情况，分别是“活锁”和“饥饿”。</p>
 <p>活锁： 有时线程虽然没有发生阻塞，但仍然会存在执行不下去的情况</p>
