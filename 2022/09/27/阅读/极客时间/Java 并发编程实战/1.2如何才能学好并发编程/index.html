@@ -21,19 +21,22 @@
     var CONFIG = {"hostname":"oliver6653.github.io","root":"/ky/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="{&quot;containsFormula&quot;:[],&quot;containsRateTable&quot;:[{&quot;code&quot;:&quot;1290&quot;,&quot;factors&quot;:[&quot;CHARGE_YEAR&quot;,&quot;LA_AGE_YEAR&quot;,&quot;CHARGE_FREQUENCY&quot;,&quot;CHARGE_PERIOD_TYPE&quot;,&quot;PLAN_CODE&quot;,&quot;SOCIAL_INSURANCE_TYPE&quot;,&quot;NB_FLAG&quot;],&quot;resultsCode&quot;:[&quot;">
+  <meta name="description" content="跳出来，看全景 我们先说“跳出来”。你应该也知道，学习最忌讳的就是“盲人摸象”，只看到局部，而没有看到全局。所以，你需要从一个个单一的知识和技术中“跳出来”，高屋建瓴地看并发编程。当然，这首要之事就是你建立起一张全景图。 不过，并发编程相关的知识和技术还真是错综复杂，时至今日也还没有一张普遍认可的全景图，也许这正是很多人在并发编程方面难以突破的原因吧。好在经过多年摸爬滚打，我自己已经“勾勒”出了一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ky431">
-<meta property="og:url" content="https://oliver6653.github.io/ky/2022/07/27/formula/index.html">
+<meta property="og:title" content="Java 并发编程实战#如何才能学好并发编程">
+<meta property="og:url" content="https://oliver6653.github.io/ky/2022/09/27/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/1.2%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E5%AD%A6%E5%A5%BD%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="ky431">
-<meta property="og:description" content="{&quot;containsFormula&quot;:[],&quot;containsRateTable&quot;:[{&quot;code&quot;:&quot;1290&quot;,&quot;factors&quot;:[&quot;CHARGE_YEAR&quot;,&quot;LA_AGE_YEAR&quot;,&quot;CHARGE_FREQUENCY&quot;,&quot;CHARGE_PERIOD_TYPE&quot;,&quot;PLAN_CODE&quot;,&quot;SOCIAL_INSURANCE_TYPE&quot;,&quot;NB_FLAG&quot;],&quot;resultsCode&quot;:[&quot;">
+<meta property="og:description" content="跳出来，看全景 我们先说“跳出来”。你应该也知道，学习最忌讳的就是“盲人摸象”，只看到局部，而没有看到全局。所以，你需要从一个个单一的知识和技术中“跳出来”，高屋建瓴地看并发编程。当然，这首要之事就是你建立起一张全景图。 不过，并发编程相关的知识和技术还真是错综复杂，时至今日也还没有一张普遍认可的全景图，也许这正是很多人在并发编程方面难以突破的原因吧。好在经过多年摸爬滚打，我自己已经“勾勒”出了一">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-27T06:25:51.338Z">
-<meta property="article:modified_time" content="2022-07-27T06:25:51.339Z">
+<meta property="og:image" content="https://oliver6653.github.io/ky/2022/09/27/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/1.2%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E5%AD%A6%E5%A5%BD%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/j%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.png">
+<meta property="article:published_time" content="2022-09-27T10:37:34.818Z">
+<meta property="article:modified_time" content="2022-09-29T09:23:26.316Z">
 <meta property="article:author" content="ght">
+<meta property="article:tag" content="Java 并发编程实战">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oliver6653.github.io/ky/2022/09/27/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/1.2%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E5%AD%A6%E5%A5%BD%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/j%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.png">
 
-<link rel="canonical" href="https://oliver6653.github.io/ky/2022/07/27/formula/">
+<link rel="canonical" href="https://oliver6653.github.io/ky/2022/09/27/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/1.2%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E5%AD%A6%E5%A5%BD%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
 
 
 <script id="page-configurations">
@@ -46,7 +49,7 @@
   };
 </script>
 
-  <title> | ky431</title>
+  <title>Java 并发编程实战#如何才能学好并发编程 | ky431</title>
   
 
 
@@ -132,7 +135,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/ky/archives/" rel="section"><i class="archives fa-fw"></i>归档<span class="badge">68</span></a>
+    <a href="/ky/archives/" rel="section"><i class="archives fa-fw"></i>归档<span class="badge">74</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -190,7 +193,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://oliver6653.github.io/ky/2022/07/27/formula/">
+    <link itemprop="mainEntityOfPage" href="https://oliver6653.github.io/ky/2022/09/27/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/1.2%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E5%AD%A6%E5%A5%BD%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/ky/images/avatar.gif">
@@ -203,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Java 并发编程实战#如何才能学好并发编程
         </h1>
 
         <div class="post-meta">
@@ -213,7 +216,23 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2022-07-27 14:25:51" itemprop="dateCreated datePublished" datetime="2022-07-27T14:25:51+08:00">2022-07-27</time>
+              <time title="创建时间：2022-09-27 18:37:34" itemprop="dateCreated datePublished" datetime="2022-09-27T18:37:34+08:00">2022-09-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-29 17:23:26" itemprop="dateModified" datetime="2022-09-29T17:23:26+08:00">2022-09-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ky/categories/Java-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/" itemprop="url" rel="index"><span itemprop="name">Java 并发编程实战</span></a>
+                </span>
             </span>
 
           
@@ -229,7 +248,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>1k</span>
             </span>
 
         </div>
@@ -241,7 +260,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        {"containsFormula":[],"containsRateTable":[{"code":"1290","factors":["CHARGE_YEAR","LA_AGE_YEAR","CHARGE_FREQUENCY","CHARGE_PERIOD_TYPE","PLAN_CODE","SOCIAL_INSURANCE_TYPE","NB_FLAG"],"resultsCode":["PREMRATE"]}],"containsRateTableCode":"1290","factorTypes":[],"formulaCode":"2022-Q2-11-A","formulaDetail":"{\"containsFormula\":[],\"containsRateTable\":[{\"code\":\"1290\",\"factors\":[\"CHARGE_YEAR\",\"LA_AGE_YEAR\",\"CHARGE_FREQUENCY\",\"CHARGE_PERIOD_TYPE\",\"PLAN_CODE\",\"SOCIAL_INSURANCE_TYPE\",\"NB_FLAG\"],\"resultsCode\":[\"PREMRATE\"]}],\"containsRateTableCode\":\"1290\",\"creator\":\"system\",\"factorTypes\":[],\"formulaCode\":\"2022-Q2-11-A\",\"formulaName\":\"2022-Q2-11-A\",\"formulaType\":\"DEFAULT\",\"formulaTypeId\":2,\"modifier\":\"system\",\"params\":[{\"paramName\":\"CHARGE_YEAR\"},{\"paramName\":\"LA_AGE_YEAR\"},{\"paramName\":\"CHARGE_FREQUENCY\"},{\"paramName\":\"CHARGE_PERIOD_TYPE\"},{\"paramName\":\"PLAN_CODE\"},{\"paramName\":\"SOCIAL_INSURANCE_TYPE\"},{\"paramName\":\"NB_FLAG\"}],\"remark\":\"GP_IT_XXX互联网定百万医疗\",\"steps\":[{\"branches\":[],\"number\":1,\"params\":[{\"paramName\":\"CHARGE_YEAR\"},{\"paramName\":\"LA_AGE_YEAR\"},{\"paramName\":\"CHARGE_FREQUENCY\"},{\"paramName\":\"CHARGE_PERIOD_TYPE\"},{\"paramName\":\"PLAN_CODE\"},{\"paramName\":\"SOCIAL_INSURANCE_TYPE\"},{\"paramName\":\"NB_FLAG\"}],\"queryRatePO\":{\"resultCode\":\"PREMRATE\"},\"result\":\"final\",\"stepContent\":\"1290\",\"type\":\"queryRate\"}]}","formulaName":"2022-Q2-11-A","formulaType":"DEFAULT","formulaTypeId":2,"modifier":"system","params":[{"paramName":"CHARGE_YEAR"},{"paramName":"LA_AGE_YEAR"},{"paramName":"CHARGE_FREQUENCY"},{"paramName":"CHARGE_PERIOD_TYPE"},{"paramName":"PLAN_CODE"},{"paramName":"SOCIAL_INSURANCE_TYPE"},{"paramName":"NB_FLAG"},{"paramName":"rateFactor"}],"remark":"GP_IT_XXX互联网定百万医疗","steps":[{"branches":[],"number":1,"params":[{"paramName":"CHARGE_YEAR"},{"paramName":"LA_AGE_YEAR"},{"paramName":"CHARGE_FREQUENCY"},{"paramName":"CHARGE_PERIOD_TYPE"},{"paramName":"PLAN_CODE"},{"paramName":"SOCIAL_INSURANCE_TYPE"},{"paramName":"NB_FLAG"}],"queryRatePO":{"resultCode":"PREMRATE"},"result":"basePremium","stepContent":"1290","type":"queryRate"},{"branches":[],"number":2,"oriStepContent":"rateFactor*basePremium","params":[],"result":"final","stepContent":"rateFactor*basePremium","type":"simple"}]}
+        <h1>跳出来，看全景</h1>
+<p>我们先说“跳出来”。你应该也知道，学习最忌讳的就是“盲人摸象”，只看到局部，而没有看到全局。所以，你需要从一个个单一的知识和技术中“跳出来”，高屋建瓴地看并发编程。当然，这首要之事就是你建立起一张全景图。</p>
+<p>不过，并发编程相关的知识和技术还真是错综复杂，时至今日也还没有一张普遍认可的全景图，也许这正是很多人在并发编程方面难以突破的原因吧。好在经过多年摸爬滚打，我自己已经“勾勒”出了一张全景图，不一定科学，但是在某种程度上我想它还是可以指导你学好并发编程的。</p>
+<p>在我看来，并发编程领域可以抽象成三个核心问题：分工、同步和互斥。</p>
+<ol>
+<li>分工</li>
+</ol>
+<p>所谓分工，类似于现实中一个组织完成一个项目，项目经理要拆分任务，安排合适的成员去完成。在并发编程领域，你就是项目经理，线程就是项目组成员。</p>
+<ol start="2">
+<li>同步</li>
+</ol>
+<p>在并发编程领域里的同步，主要指的就是线程间的协作，本质上和现实生活中的协作没区别，不过是一个线程执行完了一个任务，如何通知执行后续任务的线程开工而已。</p>
+<p>当某个条件不满足时，线程需要等待，当某个条件满足时，线程需要被唤醒执行。例如，在生产者 - 消费者模型里，也有类似的描述，“当队列满时，生产者线程等待，当队列不满时，生产者线程需要被唤醒执行；当队列空时，消费者线程等待，当队列不空时，消费者线程需要被唤醒执行。”</p>
+<p>在 Java 并发编程领域，解决协作问题的核心技术是管程，上面提到的所有线程协作技术底层都是利用管程解决的。管程是一种解决并发问题的通用模型，除了能解决线程协作问题，还能解决下面我们将要介绍的互斥问题。可以这么说，管程是解决并发问题的万能钥匙。</p>
+<ol start="3">
+<li>互斥</li>
+</ol>
+<p>分工、同步主要强调的是性能，但并发程序里还有一部分是关于正确性的，用专业术语叫“线程安全”</p>
+<p>所谓互斥，指的是同一时刻，只允许一个线程访问共享变量。</p>
+<p><img src="j%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B.png" alt="j并发编程"></p>
+<h1>钻进去，看本质</h1>
+<p>就拿我个人来说，我已经烦透了去讲述或被讲述一堆概念和结论，而不分析这些概念和结论是怎么来的，以及它们是用来解决什么问题的。</p>
+<p>我认为工程上的解决方案，一定要有理论做基础。技术的本质是背后的理论模型。</p>
+<p>当初我学习 Java 并发编程的时候，试图上来就看 Java SDK 的并发包，但是很快就放弃了。原因是我觉得东西太多，眼花缭乱的，虽然借助网络上的技术文章，感觉都看懂了，但是很快就又忘了。实际应用的时候大脑也一片空白，根本不知道从哪里下手，有时候好不容易解决了个问题，也不知道这个方案是不是合适的。</p>
+<p><strong>我知道根本原因是，我的并发知识还没有成体系。</strong></p>
+
     </div>
 
     
@@ -249,6 +293,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/ky/tags/Java-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/" rel="tag"># Java 并发编程实战</a>
+          </div>
 
         
 
@@ -256,12 +303,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/ky/2022/07/24/%E9%98%85%E8%AF%BB/java/hutool/Hutoolv5.6.0%E6%96%87%E6%A1%A3/" rel="prev" title="hutool#Hutoolv5.6.0文档">
-      <i class="fa fa-chevron-left"></i> hutool#Hutoolv5.6.0文档
+    <a href="/ky/2022/09/27/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/1.1%E5%8D%81%E5%B9%B4%E4%B9%8B%E5%90%8E%EF%BC%8C%E5%88%9D%E5%BF%83%E4%BE%9D%E6%97%A7/" rel="prev" title="Java 并发编程实战#十年之后，初心依旧">
+      <i class="fa fa-chevron-left"></i> Java 并发编程实战#十年之后，初心依旧
     </a></div>
       <div class="post-nav-item">
-    <a href="/ky/2022/07/31/ss%E6%95%B0%E4%B8%89/gs%E9%AB%98%E6%95%B0/s4%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86/" rel="next" title="gs高数#s4不定积分">
-      gs高数#s4不定积分 <i class="fa fa-chevron-right"></i>
+    <a href="/ky/2022/09/29/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/2.1%E5%B9%B6%E5%8F%91%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80-%E5%8F%AF%E8%A7%81%E6%80%A7%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E5%92%8C%E6%9C%89%E5%BA%8F%E6%80%A7%E9%97%AE%E9%A2%98/" rel="next" title="Java 并发编程实战#2.1并发理论基础-可见性、原子性和有序性问题">
+      Java 并发编程实战#2.1并发理论基础-可见性、原子性和有序性问题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -321,6 +368,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">跳出来，看全景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">钻进去，看本质</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -334,7 +382,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/ky/archives/">
         
-          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -391,7 +439,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">122k</span>
+    <span title="站点总字数">127k</span>
 </div><script color="0,0,255" opacity="0.5" zIndex="-1" count="99" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
 
 
@@ -486,7 +534,7 @@
       quicklink({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://oliver6653.github.io/ky/2022/07/27/formula/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://oliver6653.github.io/ky/2022/09/27/%E9%98%85%E8%AF%BB/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/Java%20%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/1.2%E5%A6%82%E4%BD%95%E6%89%8D%E8%83%BD%E5%AD%A6%E5%A5%BD%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/',]
       });
       });
   </script>
